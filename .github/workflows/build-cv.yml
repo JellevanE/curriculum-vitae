@@ -44,8 +44,6 @@ jobs:
           path: output/
           retention-days: 30
 
-      # Optional: publish HTML to GitHub Pages
-      # Uncomment this block and enable Pages (Settings → Pages → Source: GitHub Actions)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

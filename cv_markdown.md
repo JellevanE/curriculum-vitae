@@ -30,7 +30,6 @@
 
 ## Experience
 
-> **Current Role**  
 ### Jan 2025 – present · Coolblue  
 *Generative AI Specialist · Rotterdam*  
 
