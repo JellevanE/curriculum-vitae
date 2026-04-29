@@ -46,9 +46,9 @@ jobs:
 
       # Optional: publish HTML to GitHub Pages
       # Uncomment this block and enable Pages (Settings → Pages → Source: GitHub Actions)
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./output
-      #     publish_branch: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: gh-pages
