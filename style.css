@@ -64,13 +64,23 @@ table {
 
 table td {
   vertical-align: top;
-  padding: 0 1rem 0 0;
+  padding: 0 3rem 0 0;
   border: none;
-  width: 50%;
 }
 
 table td:last-child {
   padding-right: 0;
+}
+
+/* Keep Profile/Links columns at their natural content widths so the image cell
+   absorbs the slack and pushes the photo to the right edge. */
+table td:not(.profile-img-cell) ul li {
+  white-space: nowrap;
+}
+
+.profile-img-cell {
+  width: 100%;
+  text-align: right;
 }
 
 table h3 {
@@ -78,6 +88,7 @@ table h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #555;
+  margin-top: 0;
   margin-bottom: 0.3em;
 }
 
@@ -92,22 +103,11 @@ table ul li {
   font-size: 0.95rem;
 }
 
-/* --- Experience entries --- */
-/* The "Current Role" blockquote acts as a label */
-blockquote {
-  margin: 0 0 0.2em 0;
-  padding: 0;
-  border: none;
-  font-style: normal;
-}
-
-blockquote p {
-  margin: 0;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888;
-  font-weight: 600;
+.profile-img-cell img {
+  width: 130px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
 }
 
 /* Job title italics */

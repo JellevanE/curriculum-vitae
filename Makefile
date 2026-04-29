@@ -26,7 +26,7 @@ $(HTML): $(SRC) $(CSS) | $(OUTDIR)
 		--standalone \
 		--embed-resources \
 		--css $(CSS) \
-		--metadata title="Jelle van Elburg — CV" \
+		--metadata pagetitle="Jelle van Elburg — CV" \
 		--output $(HTML)
 	@echo "✓ HTML written to $(HTML)"
 
