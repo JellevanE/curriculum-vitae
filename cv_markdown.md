@@ -43,7 +43,7 @@
 - Driving adoption of generative AI tooling across developer and non-developer colleagues through workshops and documentation
 - Collaborating cross-functionally with product, data, and engineering teams to embed AI-driven solutions into Coolblue's customer journey
 
-### Oct 2024 – Jan 2025 · Vrije Universiteit Amsterdam (VU)  
+### Oct 2024 – Jan 2025 · Vrije Universiteit Amsterdam
 *Researcher · Amsterdam*  
 
 - Conducted research in the field of artificial intelligence with a focus on generative AI  
