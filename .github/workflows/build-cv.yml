@@ -1,0 +1,54 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv_markdown.md'
+      - 'style.css'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc and WeasyPrint
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y pandoc weasyprint
+
+      - name: Create output directory
+        run: mkdir -p output
+
+      - name: Build HTML
+        run: |
+          pandoc cv_markdown.md \
+            --from markdown \
+            --to html5 \
+            --standalone \
+            --css style.css \
+            --metadata title="Jelle van Elburg — CV" \
+            --output output/cv.html
+
+      - name: Build PDF (via WeasyPrint)
+        run: weasyprint output/cv.html output/cv.pdf
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-output
+          path: output/
+          retention-days: 30
+
+      # Optional: publish HTML to GitHub Pages
+      # Uncomment this block and enable Pages (Settings → Pages → Source: GitHub Actions)
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./output
+      #     publish_branch: gh-pages

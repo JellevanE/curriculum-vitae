@@ -1,0 +1,162 @@
+/* =====================================================
+   CV Stylesheet — Jelle van Elburg
+   For use with Pandoc → HTML/PDF pipeline
+   ===================================================== */
+
+/* --- Base & Typography --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* --- Name / Header --- */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.1em;
+  color: #111;
+  border: none;
+}
+
+/* --- Section Headings --- */
+h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #111;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 0.2em;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* --- Job / Entry Headings --- */
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.8rem 0 0.1em 0;
+  color: #111;
+}
+
+/* --- Horizontal Rule --- */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.2rem 0;
+}
+
+/* --- Profile / Links table --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+}
+
+table td {
+  vertical-align: top;
+  padding: 0 1rem 0 0;
+  border: none;
+  width: 50%;
+}
+
+table td:last-child {
+  padding-right: 0;
+}
+
+table h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #555;
+  margin-bottom: 0.3em;
+}
+
+table ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+table ul li {
+  margin: 0.15em 0;
+  font-size: 0.95rem;
+}
+
+/* --- Experience entries --- */
+/* The "Current Role" blockquote acts as a label */
+blockquote {
+  margin: 0 0 0.2em 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+}
+
+blockquote p {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #888;
+  font-weight: 600;
+}
+
+/* Job title italics */
+p > em {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Bullet lists in experience */
+ul {
+  margin: 0.4em 0 0.6em 0;
+  padding-left: 1.4em;
+}
+
+li {
+  margin-bottom: 0.25em;
+  font-size: 0.97rem;
+}
+
+/* --- Links --- */
+a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: #555;
+}
+
+/* --- Bold --- */
+strong {
+  font-weight: 700;
+}
+
+/* --- Print tweaks --- */
+@media print {
+  body {
+    padding: 1.5rem 1.2rem;
+    font-size: 10pt;
+    max-width: 100%;
+  }
+
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 0.9rem; page-break-after: avoid; }
+  h3 { page-break-after: avoid; }
+
+  a { color: #000; text-decoration: none; }
+
+  /* Avoid breaking entries across pages */
+  section, .entry { page-break-inside: avoid; }
+}
